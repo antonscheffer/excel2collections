@@ -395,6 +395,17 @@ wwv_flow_api.create_plugin (
 '''FMj8VtCjq+hWRlLy69ewgs4vsn8Cwq56uG3wMba5nWKTCxyAPL07rn8DAB+QK/EM''||'||chr(10)||
 '''AAA='';'||chr(10)||
 '--'||chr(10)||
+'  cursor c_api( b_app_id number, b_page_id number, b_item_name varchar2 )'||chr(10)||
+'  is'||chr(10)||
+'    select api.attribute_01 '||chr(10)||
+'    from apex_application_page_items api'||chr(10)||
+'    where api.application_id = b_app_id'||chr(10)||
+'    and   api.page_id = b_page_id'||chr(10)||
+'    and   api.display_as_code = ''NATIVE_FILE'''||chr(10)||
+'    and   api.item_name = b_item_name;'||chr(10)||
+'  '||
+'r_api c_api%rowtype;'||chr(10)||
+'--'||chr(10)||
 '  procedure log( p_msg varchar2 )'||chr(10)||
 '  is'||chr(10)||
 '  begin'||chr(10)||
@@ -404,12 +415,12 @@ wwv_flow_api.create_plugin (
 '  function dc( p varchar2 ) return varchar2'||chr(10)||
 '  is'||chr(10)||
 '  begin'||chr(10)||
-'    return utl_raw.cast_to_varchar2( utl_compress.lz_uncompress( utl_encode.base64_decode( utl_raw.'||
-'cast_to_raw( p ) ) ) );'||chr(10)||
+'    return utl_raw.cast_to_varchar2( utl_compress.lz_uncompress( utl_encode.base64_decode( utl_raw.cast_to_raw( p ) ) ) );'||chr(10)||
 '  end;'||chr(10)||
 '--'||chr(10)||
 'begin'||chr(10)||
-'  p_browse_item     := p_process.attribute_01;'||chr(10)||
+'  p_browse_item     := p_p'||
+'rocess.attribute_01;'||chr(10)||
 '  p_collection_name := p_process.attribute_02;'||chr(10)||
 '  p_sheet_nrs       := p_process.attribute_03;'||chr(10)||
 '  if upper( p_process.attribute_04 ) in ( ''HT'', ''^I'', ''\T'' )'||chr(10)||
@@ -419,39 +430,56 @@ wwv_flow_api.create_plugin (
 '  then'||chr(10)||
 '    p_separator := chr(11);'||chr(10)||
 '  else'||chr(10)||
-'    p_separator :='||
-' substr( ltrim( p_process.attribute_04 ), 1, 1 );'||chr(10)||
+'    p_separator := substr( ltrim( p_process.attribute_04 ), 1, 1 );'||chr(10)||
 '  end if;'||chr(10)||
-'  p_enclosed_by     := substr( ltrim( p_process.attribute_05 ), 1, 1 );'||chr(10)||
+'  p_en'||
+'closed_by     := substr( ltrim( p_process.attribute_05 ), 1, 1 );'||chr(10)||
 '  p_encoding        := p_process.attribute_06;'||chr(10)||
 '  p_round := substr( ltrim( p_process.attribute_07 ), 1, 1 );'||chr(10)||
 '--'||chr(10)||
-'  t_filename := apex_util.get_session_state(  p_browse_item );'||chr(10)||
-'  log( ''looking for uploaded file '' || t_filename );'||chr(10)||
+'  open c_api( nv(''APP_ID''), nv(''APP_PAGE_ID''), upper( p_browse_item ) );'||chr(10)||
+'  fetch c_api into r_api;'||chr(10)||
+'  if c_api%notfound'||chr(10)||
+'  then'||chr(10)||
+'    log( ''FILE BROWSE item '' || p_browse_item || '' not found'' );'||chr(10)||
+'  end if;'||chr(10)||
+'  close c_api;'||chr(10)||
+'  t_fi'||
+'lename := apex_util.get_session_state(  p_browse_item );'||chr(10)||
+'  log( ''looking for uploaded file '' || t_filename || '' in '' || r_api.attribute_01 );'||chr(10)||
 '--'||chr(10)||
 '  begin'||chr(10)||
-'    select aaf.id'||chr(10)||
-'         , '||
-'aaf.blob_content'||chr(10)||
-'         , aaf.filename'||chr(10)||
-'    into t_file_id'||chr(10)||
-'       , t_document'||chr(10)||
-'       , t_filename'||chr(10)||
-'    from apex_application_files aaf'||chr(10)||
-'    where aaf.name = t_filename;'||chr(10)||
+'    if r_api.attribute_01 = ''WWV_FLOW_FILES'''||chr(10)||
+'    then'||chr(10)||
+'      select aaf.id'||chr(10)||
+'           , aaf.blob_content'||chr(10)||
+'      into t_file_id'||chr(10)||
+'         , t_document'||chr(10)||
+'      from apex_application_files aaf'||chr(10)||
+'      where aaf.name = t_filename;'||chr(10)||
 '--'||chr(10)||
-'    delete from apex_application_files aaf'||chr(10)||
-'    where aaf.id = t_file_id;'||chr(10)||
+'      delete from apex_a'||
+'pplication_files aaf'||chr(10)||
+'      where aaf.id = t_file_id;'||chr(10)||
 '--'||chr(10)||
-'    log( ''retrieved!''  );'||chr(10)||
-'  exception'||chr(10)||
+'      log( ''retrieved!''  );'||chr(10)||
+'    elsif r_api.attribute_01 = ''APEX_APPLICATION_TEMP_FILES'''||chr(10)||
+'    then'||chr(10)||
+'      execute immediate ''select aaf.blob_content'||chr(10)||
+'                         from apex_application_temp_files aaf'||chr(10)||
+'                         where aaf.name = :fn'''||chr(10)||
+'      into t_document using t_filename;'||chr(10)||
+'--'||chr(10)||
+'      log( ''retrieved!''  );'||chr(10)||
+'    end if;'||chr(10)||
+'  exc'||
+'eption'||chr(10)||
 '    when no_data_found'||chr(10)||
 '    then'||chr(10)||
 '      raise e_no_doc;'||chr(10)||
 '  end;'||chr(10)||
 '--'||chr(10)||
-'  if t_document is null or dbms_lob.getlength( t_d'||
-'ocument ) = 0'||chr(10)||
+'  if t_document is null or dbms_lob.getlength( t_document ) = 0'||chr(10)||
 '  then'||chr(10)||
 '    log( ''file is empty'' );'||chr(10)||
 '    return null;'||chr(10)||
@@ -461,13 +489,13 @@ wwv_flow_api.create_plugin (
 '--'||chr(10)||
 '  if apex_collection.collection_exists( p_collection_name )'||chr(10)||
 '  then'||chr(10)||
-'    apex_collection.delete_collection( p_collection_name );'||chr(10)||
+'    apex_collection.delete_collection( p_coll'||
+'ection_name );'||chr(10)||
 '  end if;'||chr(10)||
 '  for i in 1 .. 10'||chr(10)||
 '  loop'||chr(10)||
 '    if apex_collection.collection_exists( p_collection_name || i )'||chr(10)||
-'   '||
-' then'||chr(10)||
+'    then'||chr(10)||
 '      apex_collection.delete_collection( p_collection_name || i );'||chr(10)||
 '    end if;'||chr(10)||
 '  end loop;'||chr(10)||
@@ -476,36 +504,36 @@ wwv_flow_api.create_plugin (
 '  then'||chr(10)||
 '    log( ''parsing XLSX'' );'||chr(10)||
 '    t_what := ''XLSX-file'';'||chr(10)||
-'    execute immediate dc( t_parse_bef ) || dc( t_parse_xlsx ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
-'  elsif dbms_lob.substr( t_docu'||
-'ment, 8, 1 ) = hextoraw( ''D0CF11E0A1B11AE1'' )'||chr(10)||
+'    execute immediate dc( t_parse_bef ) || dc( t_par'||
+'se_xlsx ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
+'  elsif dbms_lob.substr( t_document, 8, 1 ) = hextoraw( ''D0CF11E0A1B11AE1'' )'||chr(10)||
 '  then'||chr(10)||
 '    log( ''parsing XLS'' );'||chr(10)||
 '    t_what := ''XLS-file'';'||chr(10)||
 '    execute immediate dc( t_parse_bef ) || dc( t_parse_xls ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
-'  elsif dbms_lob.substr( t_document, 5, 1 ) = hextoraw( ''3C68746D6C'' )'||chr(10)||
+'  elsif dbms_lob.substr( t_docume'||
+'nt, 5, 1 ) = hextoraw( ''3C68746D6C'' )'||chr(10)||
 '  then'||chr(10)||
 '    log( ''parsing HTML'' );'||chr(10)||
 '    t_what := ''HTML-file'';'||chr(10)||
-'    execute immediate '||
-'dc( t_parse_bef ) || dc( t_parse_html ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
+'    execute immediate dc( t_parse_bef ) || dc( t_parse_html ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
 '  elsif (  dbms_lob.substr( t_document, 1, 1 ) = hextoraw( ''3C'' )'||chr(10)||
 '        or dbms_lob.substr( t_document, 2, 1 ) = hextoraw( ''003C'' )'||chr(10)||
-'        or dbms_lob.substr( t_document, 4, 1 ) = hextoraw( ''0000003C'' )'||chr(10)||
+'        or dbms_lob.subst'||
+'r( t_document, 4, 1 ) = hextoraw( ''0000003C'' )'||chr(10)||
 '        )'||chr(10)||
 '  then'||chr(10)||
 '    log( ''parsing XML'' );'||chr(10)||
 '    t_what := ''XML-file'';'||chr(10)||
-'    e'||
-'xecute immediate dc( t_parse_bef ) || dc( t_parse_xml ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
+'    execute immediate dc( t_parse_bef ) || dc( t_parse_xml ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
 '  else'||chr(10)||
 '    log( ''parsing CSV'' );'||chr(10)||
 '    t_what := ''CSV-file'';'||chr(10)||
-'    execute immediate dc( t_parse_csv ) using p_collection_name, t_document, p_separator, p_enclosed_by, p_encoding;'||chr(10)||
+'    execute immediate dc( t_parse_csv ) using p_collection_name, t_document, p_separ'||
+'ator, p_enclosed_by, p_encoding;'||chr(10)||
 '  end if;'||chr(10)||
 '--'||chr(10)||
-'    t_rv.success_message := ''Loaded a '' || t_what || '' in '' || to_char( tru'||
-'nc( ( sysdate - t_time ) * 24 * 60 * 60 ) ) || '' seconds'';'||chr(10)||
+'    t_rv.success_message := ''Loaded a '' || t_what || '' in '' || to_char( trunc( ( sysdate - t_time ) * 24 * 60 * 60 ) ) || '' seconds'';'||chr(10)||
 '    return t_rv;'||chr(10)||
 'exception'||chr(10)||
 '  when e_no_doc'||chr(10)||
@@ -515,23 +543,25 @@ wwv_flow_api.create_plugin (
 '  when others'||chr(10)||
 '  then'||chr(10)||
 '    log( dbms_utility.format_error_stack );'||chr(10)||
-'    log( dbms_utility.format_error_backtrace );'||chr(10)||
+'    log( dbms_utility.format_e'||
+'rror_backtrace );'||chr(10)||
 '    t_rv.success_message := ''Oops, something went wrong in '' || p_plugin.name ||'||chr(10)||
-'         ''<br/>'' || db'||
-'ms_utility.format_error_stack || ''<br/><br/>'' ||'||chr(10)||
+'         ''<br/>'' || dbms_utility.format_error_stack || ''<br/><br/>'' ||'||chr(10)||
 '       dbms_utility.format_error_backtrace || ''<br/><br/>'' ||'||chr(10)||
 '         ''This could be caused by<ul>'' ||'||chr(10)||
 '           ''<li>'' || ''my (lack of) programming skills'' || ''</li>'' ||'||chr(10)||
-'           ''<li>'' || ''something else, people do a lot more with Apex than I ever could imagine''||'||chr(10)||
+'           ''<li>'' || ''something else, people do a lot mor'||
+'e with Apex than I ever could imagine''||'||chr(10)||
 '           ''</li></ul><br/>'' ||'||chr(10)||
-'           ''try running this plugin in debug mod'||
-'e, and send the debug messages to me, scheffer@amis.nl'';'||chr(10)||
+'           ''try running this plugin in debug mode, and send the debug messages to me, scheffer@amis.nl'';'||chr(10)||
 '    return t_rv;'||chr(10)||
 'end;'||chr(10)||
 ''
  ,p_execution_function => 'parse_excel'
- ,p_version_identifier => '0.818'
- ,p_plugin_comment => '0.818'||chr(10)||
+ ,p_version_identifier => '0.820'
+ ,p_plugin_comment => '0.820'||chr(10)||
+'  Apex 5.0: Handle APEX_APPLICATION_TEMP_FILES'||chr(10)||
+'0.818'||chr(10)||
 '  XLS: fixed bug for unicode strings starting at CONTINUE record'||chr(10)||
 '0.816'||chr(10)||
 '  XLSX: treat numbers with "text" format as string'||chr(10)||
