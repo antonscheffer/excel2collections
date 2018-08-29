@@ -631,7 +631,11 @@ wwv_flow_api.create_plugin (
 ''
  ,p_execution_function => 'parse_excel'
  ,p_version_identifier => '0.902'
- ,p_plugin_comment => '0.823'||chr(10)||
+ ,p_plugin_comment => 
+'0.902'||chr(10)||
+'  use package excel2collection when available'||chr(10)||
+'  XLS: better support for BIFF5'||chr(10)||
+'0.823'||chr(10)||
 '  XLS: fix date during MULRK'||chr(10)||
 '0.822'||chr(10)||
 '  XLS: fix empty string results for formulas'||chr(10)||
