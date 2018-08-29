@@ -630,7 +630,7 @@ wwv_flow_api.create_plugin (
 'end;'||chr(10)||
 ''
  ,p_execution_function => 'parse_excel'
- ,p_version_identifier => '0.823'
+ ,p_version_identifier => '0.902'
  ,p_plugin_comment => '0.823'||chr(10)||
 '  XLS: fix date during MULRK'||chr(10)||
 '0.822'||chr(10)||
