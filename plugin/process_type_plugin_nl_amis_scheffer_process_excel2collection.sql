@@ -278,94 +278,122 @@ wwv_flow_api.create_plugin (
 '--'||chr(10)||
 '  t_parse_xls varchar2(32767) :='||chr(10)||
 '''H4sIAAAAAAAAC+0cXW/jRu7dv0J9OEhayz5JVmyn6RZINwmwwO72sGnRuydDtseJ''||'||chr(10)||
-'''urZkSHKTHPrjj5xvjSXZsZ1scdsggK3RDMnhkBwOyXFnsUlnZZKl1jrOC9Jx1pN5''||'||chr(10)||
-'''NtusSFpa02U27XjrSXFPSFlYf8T57D7OQ+v7t1a6WS7xFXks89iaT1dFtinXm3Ky''||'||chr(10)||
-'''TFJSxHkeP8lubicn5SZPrRJgx2XcSY'||
-'pOOZmR5RJb8PMCnvPsocBn/MRn7ClG4PND''||'||chr(10)||
-'''ln+ZZtkXShU2JOncStKS3JEcHwvjeUlS/XEVP5pNM5ii9niXT5PSyuMHJ3DxeZos''||'||chr(10)||
-'''FmcWoFySOKUYylzywBmEo+GI9kvmqjWy8JM235N4TnIKL6IN5WpNn9TInMyMFpgs''||'||chr(10)||
-'''Cc79SEP7tCbIhqIAYoFB8XRJrGxhEgITmZNHa/pkrZfFRGcLjGPDFSzEUgHGsTUC''||'||chr(10)||
-'''eVywMXwsNi1WpdnGoUNneFmBr4Frw4HDJACOpI7j+DwpiPYu8H0X5c3+7Xr88fa3''||'||chr(10)||
-'''95+C8Cy0Ne6hBFN+A1nwkeXzjpPGK2KC73iaGHVcA0JRmVUVbhP/2TgJQbZVhtNZ''||'||chr(10)||
-'''mUMpajVFV4ix0XGd'||
-'ZzMy3+QEJhbPJ5s0mWVzgtKapHdM16CtImhTcpekXKK5ll50''||'||chr(10)||
-'''Hu4TmBdTix8tv7PMsnUnWVibcjmBwX3Qjkmczh2uKd496H6GUG0/sF3XemtVWzrl''||'||chr(10)||
-'''PUkRgGNZTD27FPibEMALoKCSd+W9Q5ngdoMOIKDWZAJK3i82U6DQUbrvhR7V+y5V''||'||chr(10)||
-'''725URTp45/uAliOWs2Nf/vyT4kyCcdqH3pMyo2LkCEIkLiDEY+S6nn35IRj++stN''||'||chr(10)||
-'''MPxwbbvCZlCY8KVnTKINlGv90wqF1aIAtGkIcwXtAsYsLkqkcZqkcf4kFtvZgzWh''||'||chr(10)||
-'''60m6krJckglJ50mcusrGAZ4WQAEHFEkb1d6f0t6To7pMUAs+0eCiQ5awrxy/HB6X''||'||chr(10)||
-'''nr'||
-'plKSRbdTnTFswHMlCxF5ycbbF8JaHEXUBb5zpZOUrOvm0Z281dJkWNQlMvMpoV''||'||chr(10)||
-'''BHcnLZaw4TkUm+TDI7TfEce+ubE9e3Rjg5TCVxc3DOoEPccmMcj2r7ejy9t379+j''||'||chr(10)||
-'''iPP5oSGXBnuRwW4KG48VWP3+tvACDJcZcTlOrnyWzuLSoe3eFrMQeeIFrm7hQYZd''||'||chr(10)||
-'''xg+EeLH/TBCDqa9SE7VPBha+wbyER5p/CdPNagoyCW7hF9zBpCvJ2nF3Y3sZbwaR''||'||chr(10)||
-'''JtivzIB2x9y5jJkiUJBEmKjtD2B+sAOCgth+aFu4Wrv0xIROwdk3727on92kIrAR''||'||chr(10)||
-'''RALT4MUx+b7A5bfjmmcbcGscQ0JgGPuzPUTahEngCI7EsWuiLTMFD5BJT'||
-'1WEQE5C''||'||chr(10)||
-'''dE8BFHzlYiOlCN8oGQItVx44U1hxcMloO/o1PfjH96DlV1e9jx97/4E/2+1S+Eqk''||'||chr(10)||
-'''6wYOcKBvDmSU9YaBy2k3/LnZYgpdZgt67nGZP6edLc6CkJ1WnkoyAbcWmg03kqTg''||'||chr(10)||
-'''D4IraFmas+szC1j8F1orAyzazNrrXpFZ+X6+9YqZXvFWdPsHerCaC01mydxwofWe''||'||chr(10)||
-'''jT70qohLBYASDg1Gy3YfgJwxJoV+NGYTvs9yMPBZWsZwTs3lWRLMAYlX8hE3SoMG''||'||chr(10)||
-'''87AgDnqzyU1OyOSWzN5fUbYA8KKMYQvRDz3fv+0F2Pc6nU9+Xkze3QN6Pqapf4j9''||'||chr(10)||
-'''by9/0UA39h1g34/Vzk19I+x79f7z5Hq1Lp8qPdnZF61'||
-'61fKLEbfYdkd2jQj0EZSv''||'||chr(10)||
-'''u0aEasSHbPbF2k3VQI34V56tSQ5TaR8RqRGfs6zcA8eZrR2VuMrVuCmonB6ooYca''||'||chr(10)||
-'''TP1K2Vts/iCGW9sz6+JaP1gwVu8h92HWA3aosWt9p1N25b+7CYJr/zL4KQgurwPl''||'||chr(10)||
-'''XzKzo8xQxS4A7XR/fNBNtIktPPfCqgd7c00dmYphr5hfC50T7Zh4J9vRnFGrqlHx''||'||chr(10)||
-'''th6IcJCktcLTvO43SB+ovoetT5raL3i9zh5g+wy9PfdXkxeDAHjh6dS73GwC/BOA''||'||chr(10)||
-'''H9SBl16dj15d4J/3AuHFcfO624VvwjgadZM3kRcZWIF1j+CyU7mQWEBYNNMmzLCT''||'||chr(10)||
-'''uNzro70Ml/BY+obnNbSJuASH/h0St'||
-'m1HdR5lzXpKZQO1tUu/vRFg6YmiynomRuBD''||'||chr(10)||
-'''9UIBnHKAfYD3sklLx3UPmS4j0oO16AZ1q3ESnnIkvdr1lhhwzr9rc9bnVpW8Z3GV''||'||chr(10)||
-'''cup3t5WtCjrl6qsx9bQiW4fr64us4i1n7lcRWbm0tOVkks1ZH/0VrUUQjhXz9wu4''||'||chr(10)||
-'''NPMagHWHZ1u7BN9UEfqPVih2Tuqhcmy742oVHAEPsFBEYn/VDurUbdhB5gj8H3YO''||'||chr(10)||
-'''1F0/Rpxk7gzaSlKS1Rp8i/zJEZ63V+Yb4hrHiGM5FwSjGgE5zaoEYZ0WqGU5WKjP''||'||chr(10)||
-'''tmlmPBSCrTGoVbglz+P1mtCwPWf1npKu8IC01yyN0G3VWjWy6Ky9GM1bJzmPeWX8''||'||chr(10)||
-'''Yz/y2+nnoi8xl3m'||
-'y0uQVl1msONU8TD7xcKUtVFLmLEWgDIZWoopq7E/7j9OUDE8y''||'||chr(10)||
-'''u1XMZNWr6doJ1t+g/RWFlwVZsRHN3wFbHKyvJDcpWlYEz1uBsYwLcL3bhlTEqAkN''||'||chr(10)||
-'''FZy9oLOelZCsOPuunmDInWNjfQAeu/794RYPxlpwShQMCH2Q4svPvxbslBL1HSnl''||'||chr(10)||
-'''GVh0RBJ9RqLA9imzJJgFStECnJc5RRwnBZmAhCyTWYxBvgnJ8yx3eqHv+wMPRpZW''||'||chr(10)||
-'''bP0RL5M50trD0bYQenVGVLkDVRyg+wG1dPID/h7ZICMfeu6P4QwNf/smkyJM6VuO''||'||chr(10)||
-'''HojBgESnEpT3h/TovyfIoUHTWTUzxeod2vMwGnXVIBELlrxWiqk+wUVNiH6SxW4/''||'||chr(10)||
-'''Y'||
-'je+vlpZRvs0I76GvLwDOm/lFLajNKFrHKQTPETb/iWw+Qi3QwQLvBaOUK1j6G4w''||'||chr(10)||
-'''38i1ncyWcY4hk3xTKXyBdVOPKtwcz+fUwIBGGwFQ1wiS03wZ6/XD2+3QFk+bNkSk''||'||chr(10)||
-'''nrMCMqf6/JXQeDJQPDk2OXr48tBsYxO3BHE8E2pkSFprFHZlTaXGqizinvlWLUer''||'||chr(10)||
-'''hdaMnKvaJY1to9J1/xzvmGOlaQ0ZnKhkOJ9vVIQ0jRsTWNR2SAUY6Dn450qElmtu''||'||chr(10)||
-'''NWJG+jms5M7boAZ1w4OLPWt1xlu1OmNRqyPnz1JKaDVedf5CPBne+vx7y8yirZlF''||'||chr(10)||
-'''WzNjlgQN4HEzi3ZoO2L4Qfg0EiH90o3C8+h8OArPh3WKxdkRqXj3o1mO'||
-'UFPnxUv9''||'||chr(10)||
-'''aKSnGuihzt2F4gDl75uoSwHX10FoHbaS80CUZlnHZ5plfb5ZYbkB9DsEjCN0DgMQ''||'||chr(10)||
-'''LeLWVhoy1qtCsCav3xpMYSUSqg5RWdYjyXd324CxSDMdV5Yn6zdqkZzLWiuzeouZ''||'||chr(10)||
-'''+3ZunktuPqNCxSBHVqhA+2EVKppm7bOiiKepTkWA4HpyyOoGbRaDwy8c8cVUYGw0''||'||chr(10)||
-'''VS8MNdWTdcOHue8By/JWEQTXYD//Iro9OFy3I023sZ74VZW61S3cpepnr6Hqw6NU''||'||chr(10)||
-'''ffgXU/X2BW7XcVHR7hym340L7XaAIgdYw3oDGs+ez22XFlkj1/QXq1XDi6cn/mJL''||'||chr(10)||
-'''T6/9o/ZgUXnviC9HpYl2Cn2V9ig81n9w1IGQHaVo2M'||
-'QO/HBkeyAqY4xxYIAkheMs''||'||chr(10)||
-'''ygGoNiB36E2By3eff/54+WnM6zSzUlxYERZLXDQQVwvkgO0ixqaTpR42lCIWRMy0''||'||chr(10)||
-'''5xtSbT9raB82tI/q28NQazcTVdVlVtkqfstDpvgFtD55TAq6O3FJSUA2kKUaQv1d''||'||chr(10)||
-'''nWoiDYWeLNP2OUWBckTZfli4fXW2ea2wmxHYGtqHBtgC3xfC51j6DRJRE8QU3P7e''||'||chr(10)||
-'''xvpZ2QG+Q5PHm4X1KrqBy18ZBmLHeI2X1AXSYWjRP3axhJ0z2GWs/pwsCbvsg3ew''||'||chr(10)||
-'''HPbBlgyIkQ6VieFCxnDxnGLVUvF3rLA9Vkgvx2l78OvEDkfXfnisxyeMyCEbx1nb''||'||chr(10)||
-'''JipMMnCmj4LIrkehYb6SLMMXZPJH'||
-'zHnHS39VGXnDwStyteBYDYJPCgEDJFDsA1nf''||'||chr(10)||
-'''IWYvsKV2ZQaDQr+j6T8aCaBt6KC5QqVP7dqAGXAQPlMwdpOzusH7g/9LkWogxShw''||'||chr(10)||
-'''N4ShMfp4mPCdloZvXEyHJ/RDm8M71MWk/im9BwBnNA+Ln9n9k9oaYDozZGu1Aphd''||'||chr(10)||
-'''h+ioO5Z/a8nfWvIyWkI69ZeqtqXbuAVUv1C3aqFY5Fos1B5YzqkOGfeZ7JvLD7fX''||'||chr(10)||
-'''tmVcQbJ/+fwrtNKY9bexVtXbax1xqVtnVqVW5JkXWf0RXtPYyixnD8YFkwPDozvY''||'||chr(10)||
-'''PMuWp8CzYzlF5vLrXqA9JIZzRIyyhfd6dii6aFbo7VhvW9BwoEVkawzBM6OzLdeN''||'||chr(10)||
-'''2ewGbmPGrAY7T5'||
-'cpM9+q4NlSqTj9oGoJrRUjyq8lqtvnz7OMtv2tmLBqsR1nl+6m''||'||chr(10)||
-'''RcefJqopicZlOCaRt+u0jcDfquRwzZLzqordl9rPT6RL35ZXUytcV0efAU6Zy261''||'||chr(10)||
-'''yc+SiD2tzL6i8i2LyM3VkamW5gX5ijyt3wWL8iA+j5oT3V/xfP/T0Qv3QjlgmZs5''||'||chr(10)||
-'''MeTO7nq5WpC9sAUmz9K0WZ+z7vCNk/SYCfKGx4bw0Pq0plZfJCqMWAcvEhWWkPfz''||'||chr(10)||
-'''MBP+QzcvpTQI37R6Zkp9V1aTri/NF9HMEM0riVVhA5V3XPSXQLzbXyQ5/T06ycya''||'||chr(10)||
-'''TlSjFcuZquSywkDrKvKHQAnG1/gbnrTMVW0tYshNuAw7w6CndJsmx8uakZiZRgxd''||'||chr(10)||
+'''urZkSHKTHPrjj5wvzYwl2bGdbHHbIICt0QzJ4ZAcDslxZ7FJZ2WSpdY6zgvScdaT''||'||chr(10)||
+'''eTbbrEhaWtNlNu1460lxT0hZWH/E+ew+zkPr+7dWulku8RV5LPPYmk9XRbYp15ty''||'||chr(10)||
+'''skxSUsR5Hj/Jbm4nJ+UmT60SYMdl3E'||
+'mKTjmZkeUSW/DzAp7z7KHAZ/zEZ+wpRuDz''||'||chr(10)||
+'''Q5Z/mWbZF0oVNiTp3ErSktyRHB8L43lJUvVxFT+aTTOYovJ4l0+T0srjBydw8Xma''||'||chr(10)||
+'''LBZnFqBckjilGMpc8sAZhKPhiPZL5lVrZOEnbb4n8ZzkFF5EG8rVmj5VI3MyM1pg''||'||chr(10)||
+'''siQ49yMF7dOaIBuKAogFBsXTJbGyhUkITGROHq3pk7VeFhOVLTCODa9gIRYNGMfW''||'||chr(10)||
+'''CORxwcbwsdi0WJVmG4cOneGlBl8B14YDh0kAHEkdx/F5UhDlXeD7Lsqb/dv1+OPt''||'||chr(10)||
+'''b+8/BeFZaCvcQwmm/Aay4CPL5x0njVfEBN/xFDHquAaEQpuVDreJ/2ychCDbtOF0''||'||chr(10)||
+'''VuZQirqaoivE2Oi4'||
+'zrMZmW9yAhOL55NNmsyyOUFpTdI7pmvQpgnalNwlKZdorqUX''||'||chr(10)||
+'''nYf7BObF1OJHy+8ss2zdSRbWplxOYHAftGMSp3OHa4p3D7qfIVTbD2zXtd5aekun''||'||chr(10)||
+'''vCcpAnAsi6lnlwJ/EwJ4ARRU8q68dygT3G7QAQTUmkxAyfvFZgoUOpXue6FH9b5L''||'||chr(10)||
+'''1bsb6UgH73wf0HLEcnbsy59/UpxJME770HtSZlSMHEGIxAWEeIxc17MvPwTDX3+5''||'||chr(10)||
+'''CYYfrm1X2AwKE770jEm0gXKtf1qhsFoUgDINYa6gXcCYxUWJNE6TNM6fxGI7e7Am''||'||chr(10)||
+'''dD1JV1KWSzIh6TyJU7eycYCnBVDAAUXSRrX3p7T35KguE9SCTzS46JAl7CvHL4fH''||'||chr(10)||
+'''pa'||
+'duWQrJVlXOlAXzgQxU7AUnZ1ssX0UoAS0n9oe39eiE8OJuochDnUwdJY9yWTgi''||'||chr(10)||
+'''ZgMEj75lOd3NeSaJjYJXL3Z06RE2bCFpVjLXSAiFQAbOVFosYTt1aF/JoUdovyOO''||'||chr(10)||
+'''fXNje/boxgYdgK8uhSXh7KliDLL96+3o8vbd+/d2JQq4TUhRWGSwV8O2ZgVWv78t''||'||chr(10)||
+'''qwDDZVuEHCdlIktncenQdm+LjYg88QJX3T9AQ1zGKYR4sf9MEINpDaSe13wy8PAN''||'||chr(10)||
+'''5if83vxLmG5WU5BacD6/4D4pHVbWjnso2zF5Mwg9wX5lBnNwzP3RmDECBVmFCdv+''||'||chr(10)||
+'''AOYJ+yyokO2HtoWrtkuTTOgUnH3z7ob+2U1KBNtNJDANXhyT7wtcfjuue'||
+'bYB58kx''||'||chr(10)||
+'''JAWGsT/bQ6RNmASO4EgcuybaMlPwM5n06CIEchKiEwyg4CsXGylF+KaSIWoHhJ/P''||'||chr(10)||
+'''FFccjzLajt5TD/7xPWj71VXv48fef+DPdrsUfiXSdQMHONA3BzLKesPA5bQbXuNs''||'||chr(10)||
+'''MYUuswU9XbnMa1ROMGdByM5ETyWZgPMMzYazSlLwOsHhtCzFpfaZjSz+C63aAIs2''||'||chr(10)||
+'''s/a6V2RWvp9vvWLGWbwV3f6BfrLiqJNZMjccdbVno6e+KuKyAkAJhwajZbsPQM4Y''||'||chr(10)||
+'''k0I/GrMJ32c5bAFZWsZwGs7liRXMAYlX8hG3UoMG80gijpOzyU1OyOSWzN5fUbYA''||'||chr(10)||
+'''8KKMYZNRj1bfv+0F2Pc6nU9+Xkze3QN6Pqapf4j9by9'||
+'/UUA39h1g349656a+Efa9''||'||chr(10)||
+'''ev95cr1al09aT3bCRuuu7wBixC223ZFdIwJ1BOXrrhFhNeJDNvti7aZqUI34V56t''||'||chr(10)||
+'''SQ5TaR8RVSM+Z7DL78ZxZisHMq5yNY4MKqcHauihBlPvVfYWTgCI4dY2zbq41g8W''||'||chr(10)||
+'''jFV7yP2Y9YAdauxa36mUXfnvboLg2r8MfgqCy+ug8mKZ2VG9RcUuAO10f3xQTbSJ''||'||chr(10)||
+'''LTz3Qt1PvrmmDo1m2DXza6GTohxG72Q7mjNqVRUq3tYDEY6StFYYM1D9B+kL1few''||'||chr(10)||
+'''1UlT+wWv19kDbJ+ht+f+avJiEAAvPJV6l5tNgH8C8IM68NK789G7C/zzXiC8OW5e''||'||chr(10)||
+'''dzv5TRhHo27yJvIiAyuw7hGceioXE'||
+'gsIi2LahBl2Epd7f7SX4RoeS9/wvIY2Ef3g''||'||chr(10)||
+'''0L9DwrbtqMqjrFlPqWygtnbptzcCLD1z6KxnYgQ+VC8UwCkH2Ad4L5u0dFz3kOky''||'||chr(10)||
+'''Ij1Yi25Qtxon4SlH0qtdb4kB5/y7Mmd1brrkPYurlFO/u61sraBTrr4aU08rsnW4''||'||chr(10)||
+'''vr7IVrzlzP0qIiuXlracTLI566O/orUIwnHF/P1CMs28BmDd4dnWLsE3VYT+oxWK''||'||chr(10)||
+'''nZN6qBzb7uidhiPgIRiKSOyvyoGdug07yByB/8POgarrx4iTzJ1BW0lKslqDb5E/''||'||chr(10)||
+'''OcLz9sp8Q1zjGHEs54JgVCMgp1mVIKzTgmpZDhbqs22aGQ+FYCsMahVuyfN4vSY0''||'||chr(10)||
+'''OcBZvaekV3hA2mu'||
+'WRuh21aobWXTWXozmrZOcx7wy/rEf+e30c9GXmMs8WSnyisss''||'||chr(10)||
+'''VpxqHqa4eEDTFiopM6MiYAZDjbijGPvT/uMUJcOTzG4VM1n1arp2gvU3aH9F4a3i''||'||chr(10)||
+'''7mj+DtjiYH0luUnRsiJ43gqMZVyA6902RBOjJjRUcPaCznpqIVlx9l09wZA7x8Yq''||'||chr(10)||
+'''BDx2/fvDLR6MleCUKEsQ+iDFl59/LdgpJeo7UsozsOiIJPqMRIHtU2ZJMAuUogU4''||'||chr(10)||
+'''L3OKOE4KMgEJWSazGIN8E5LnWe70Qt/3Bx6MLK3Y+iNeJnOktYejbSH0W2mUQC1B''||'||chr(10)||
+'''UP2AWjr5AX+PnJORdT33x3CGhr99U1YRFg5YjhqIwYBERwvO+0N69N8T5NCg6UxP''||'||chr(10)||
+'''y'||
+'rKqivZMjUKdHiRiwZLXSkLVp8CoCVFPstjtR+zG11cp/mifZsTXkBeRQOetnMJ2''||'||chr(10)||
+'''lCZ0jYN0godo278ENh/hdohggdfCEap1DN0NZjW5tpPZMs4xZJJvtPIaWLfqsQo3''||'||chr(10)||
+'''x/M5NTCg0UYA1DWC5DSjxno1ZUu7QVNE6jkrIDO3z18JhSeDiifHpk8PX569css8''||'||chr(10)||
+'''V2pkSForIXblVaXGVtnEPTOyShZXCa0ZWVk9O61sG1rX/bPAY46VpjVkcELLdD7f''||'||chr(10)||
+'''qAhpGjcmsKjtkAowUDP4z5UIJRvdasSMBHWoZdfboAZ1w4OLPSuCxlsVQWNRESTn''||'||chr(10)||
+'''z1JKaDVedf5CPBlePUO/x8yirZlFWzNjlgQN4HEzi3ZoO2L4Qfg0EiH9'||
+'0o3C8+h8''||'||chr(10)||
+'''OArPh3WKxdkRVfHuR7NgoaaajBcU0kiPHuihzt1FxQHK3zdRlwKur5RQOmwl54Eo''||'||chr(10)||
+'''xbKOzxTL+nyzwnID6HcIGEfoHAYgWsStrXhkrNaNYOVfvzWYwkolqmrHyrIeSb67''||'||chr(10)||
+'''2waMRZrpuOI/WcdRi+RcVnSZNWLM3Ldz81xy8xmVKgY5slIF2g+rVFE0a58VRTxN''||'||chr(10)||
+'''9SoCBNeTQ1Y3aLMYHH7hiC+mAmOjqXphqKierE4+zH0PWJZXRxBcg/38i+j24HDd''||'||chr(10)||
+'''jhTdxqrlV1XqVrdwl6qfvYaqD49S9eFfTNXbF7hdx0XdvHOYfjcutNsBihxgDesN''||'||chr(10)||
+'''aDx7PrddWsqNXFNfrFYNL56e+IstPb32j9qDRX2/I7'||
+'4clSbaKfQ67VF4rP/gVAdC''||'||chr(10)||
+'''dpSiYRM78MOR7YGojDHGgQGSFI6zKAeg2oDcofcRLt99/vnj5acxr9cUtZ9SceR1''||'||chr(10)||
+'''BnGBQQ7YLmJsOlmqYUMpYkHETHu+IXr7WUP7sKF9VN8ehkq7majSl7nKVvG7JDLF''||'||chr(10)||
+'''L6D1yWNS0N2JS0oCsoEsVRCq7+pUE2ko1GSZss9VFFSOKNsPC7dfnW1eK+xmBLaG''||'||chr(10)||
+'''9qEBtsD3hfA5lnpPRdQEMQW3v7exjlZ2gO/Q5PFmYb2KbuDyV4aB2DFe4SV1gVQY''||'||chr(10)||
+'''SvSPXV9h5wx25as/J0vCrhThTS+HfbAlA2KkQ2ViuJAxXDynWLVU/B0rbI8V0it4''||'||chr(10)||
+'''yh78OrHD0bUfHuvxCSNyyMZx1raJ'||
+'CpMMnOmjILJLWGiYryTL8AWZ/BFz3vHS36qM''||'||chr(10)||
+'''vOHgFblKcKwGwacKAQMkUOwDWd0hZi+wpXZlBoNCv6PpPxoJoG3ooLlCpU/t2oAZ''||'||chr(10)||
+'''cBA+UzB2X1Tf4P3B/6VINZBiFLgbwtAYfTxM+E5LwzcupsMT+qHN4R3qYlL/lN4D''||'||chr(10)||
+'''gDOah8XP7P5JbQ0wnRmyVa8AZtchtLtrf2vJ31ryElpCOvWXqral27gFVL9Qt9VC''||'||chr(10)||
+'''sci1WKg9sJxTHTLuM9k3lx9ur23LuIJk//L5V2ilMetvY63022sdcXVcZZZWK/LM''||'||chr(10)||
+'''67L+CK9pbGWWswfjgsmB4dEdbJ5ly1Pg2bGcInP5da/YHhLDOSJG2cJ7NTsUXTQr''||'||chr(10)||
+'''9Hasty1oOFAisj'||
+'WG4JnR2ZYLyWx2A7cxY1aDnafLKjPfquDZslJx+kHVElo1I8qv''||'||chr(10)||
+'''JVZ33J9nGW37WzFherEdZ5fqpkXHnyb0lETjMhyTyNt12kbgb6vkcM2S86qK3dfe''||'||chr(10)||
+'''z0+kS9+WV1MrXFdHnwFOmctutcnPkog9rcy+ovIti8jN1ZGpluYF+Yo8rd8Fi/Ig''||'||chr(10)||
+'''Po+aE91f8Xz/09EL90I5YJmbOTHkzu56uVqQvbAFJs/StFmfs+7wjZP0mAnyhseG''||'||chr(10)||
+'''8ND6tKZWXyQqjFgHLxIVlpD38zAT/lM4L6U0CN+0emZKfVdWk64vzRfRzBDNK4lV''||'||chr(10)||
+'''YQMr77joL4F4t79Icvqrd5KZNZ2oRlcsZ6qSywoDpavIHwIlGF/jb3jSMq9qaxFD''||'||chr(10)||
 ''''||
-'L6kgHK76mR5Kd2jQLamWtAmiVUGwwSAgv8oUzCE1Es5+VEP/ASKFLNiNLNhCxv1R''||'||chr(10)||
-'''fesy0+CNq1SzRrUzrptn+yIZ93ZalqaKvY4FdROvnWtVTZS6bKVK3T79ZUvJ1jow''||'||chr(10)||
-'''4tdi+I9d4oHxf9gSegaYUwAA'';'||chr(10)||
+'bsJl2BkGNaXbNDle1ozEzBRi6HpJBeFwq5/roXSHBt2SakmbIFr5sSmdQUC+zhTM''||'||chr(10)||
+'''ITUSzn5Uo9B/0IhDCnYjC7aQcX9U3brMNHjjKtWsUe2M6+bZvkjGvZ2WpdGx17Gg''||'||chr(10)||
+'''buK1c9XVpFKXrVSp26e/nynZWgdG/FoM/0lNPDD+DzoaiNz+UwAA'';'||chr(10)||
+'--'||chr(10)||
+'  t_parse_html varchar2(32767) :='||chr(10)||
+'''H4sIAAAAAAAAC9VXzW7jOAy++ym0e7GNOm28M9PJbJpeOpc97aEPYCi2khhQJEOS''||'||chr(10)||
+'''23QxDz+k/mLHTtEeN0Bii6Io8uMnUkl2vahNKwXpqNIsybqqkTXZcrlNiq7SB8ZM''||'||chr(10)||
+'''JRTpuK5aYdieKfL3hoiec5xnJ6MoabZ'||
+'HLXvT9abirWCaKkXfolqeKGZ6JYgB29TQ''||'||chr(10)||
+'''pNWJqWrGOUrwuYaxkq84hIcfaT/UOMZ1YT2OD+bISQ1O2kmmTSV3O80MGfhY4pxW''||'||chr(10)||
+'''dZiazNW6bcDF45YpHHIq9lUtQelkvBhVMbgKdrpt2I72POiZE655pUq0Yk/sx9u3''||'||chr(10)||
+'''pvsRZCjqpL4UGbqtmGguxRD0nBi0OatqYSYTalbazEl1R8WlrJZ8VnxARhjyQhW+''||'||chr(10)||
+'''/pWVy+UyXydbtm9F0u5IRhxZWu0SLdUZrD0znIm9OThC5WRDliMF3W+1UW62+FaU''||'||chr(10)||
+'''OfljQ9IvT/er71/vf94/pcAbc2AiksfnHoFpdzF9SDJw2/tatU3WG1615UrcHmkX''||'||chr(10)||
+'''5Fn6z/O/i9Xq249Fm'||
+'RZL2A3iiK7UilHDDDt2UlH1ljl6FUb1bKQmxQtTxkjknVfC''||'||chr(10)||
+'''MwABJEXUgu+RnnT7H0uKETVxeGZjUogXnrkgimWOk0P+4dhzK8kDoSDWViBo3sH0''||'||chr(10)||
+'''YSubtzQP7Joq+PA3qAMJc2qPZEkooOhGD8Qad1jHpIMln6AQp9W+WSUFZ1SbDL3H''||'||chr(10)||
+'''pLe7bLwlSZ1qDlEV1nTuYp3V/vNT2vD5jPrjjHa+sKLFKnGQfIQ8ERXHHCTqOHke''||'||chr(10)||
+'''u2Edmqs/o7rzQeJe7P3/oGM4o+FpqYdLgHoBrHM1AzvLte8It3jIK/PWMRSnz+k6''||'||chr(10)||
+'''4VJ2V3e0VlKfXNjw1BryChv4/bzlUGen6++sgcd5C2EZWiGXLg+GN2VoWdAjOBSS''||'||chr(10)||
+'''QVF'||
+'2wb0fg3o3AAJVM6AXfbqagxDKzZdPWgP3o/eQr9HpdyYXZajSd2nIYmhVc8iq''||'||chr(10)||
+'''K7CGNdGbIBh6REYQhveI9BDo5sNAN58A2jsVauvHgUbtaM3V24G1GWixHFloR8j6''||'||chr(10)||
+'''EFzZLeP5gJVwCKsXysP9CnbncHHzrX3aAlxz35xDt6fRKp87gR0+uN2cB67Lny8H''||'||chr(10)||
+'''6Ius3LUo4+DFMVP29zIc1L5Z+TZhDRYzHQK1cizG+LJY5dgK0jQ8LKQ16/Bimlhc''||'||chr(10)||
+'''JTil4EqI7z5qhNOHPnAyToZbwgTH2XQCX5srfH03oWQ+MTPHx2c67hA9PBM4vEea''||'||chr(10)||
+'''Z0GSu2l3WXbl1If8SMpYUqeGot6iHJdlPCgjeCJDz45hRcvC0cuj2hUDg1'||
+'qCRTwb''||'||chr(10)||
+'''FMj8VtCjq+hWRlLy69ewgs4vsn8Cwq56uG3wMba5nWKTCxyAPL07rn8DAB+QK/EM''||'||chr(10)||
+'''AAA='';'||chr(10)||
 '--'||chr(10)||
 '  procedure log( p_msg varchar2 )'||chr(10)||
 '  is'||chr(10)||
@@ -376,8 +404,8 @@ wwv_flow_api.create_plugin (
 '  function dc( p varchar2 ) return varchar2'||chr(10)||
 '  is'||chr(10)||
 '  begin'||chr(10)||
-'    return utl_raw.ca'||
-'st_to_varchar2( utl_compress.lz_uncompress( utl_encode.base64_decode( utl_raw.cast_to_raw( p ) ) ) );'||chr(10)||
+'    return utl_raw.cast_to_varchar2( utl_compress.lz_uncompress( utl_encode.base64_decode( utl_raw.'||
+'cast_to_raw( p ) ) ) );'||chr(10)||
 '  end;'||chr(10)||
 '--'||chr(10)||
 'begin'||chr(10)||
@@ -387,24 +415,24 @@ wwv_flow_api.create_plugin (
 '  if upper( p_process.attribute_04 ) in ( ''HT'', ''^I'', ''\T'' )'||chr(10)||
 '  then'||chr(10)||
 '    p_separator := chr(9);'||chr(10)||
-'  elsif upper( p_process.attribute_04 ) in ( '''||
-'VT'', ''^K'', ''\V'' )'||chr(10)||
+'  elsif upper( p_process.attribute_04 ) in ( ''VT'', ''^K'', ''\V'' )'||chr(10)||
 '  then'||chr(10)||
 '    p_separator := chr(11);'||chr(10)||
 '  else'||chr(10)||
-'    p_separator := substr( ltrim( p_process.attribute_04 ), 1, 1 );'||chr(10)||
+'    p_separator :='||
+' substr( ltrim( p_process.attribute_04 ), 1, 1 );'||chr(10)||
 '  end if;'||chr(10)||
 '  p_enclosed_by     := substr( ltrim( p_process.attribute_05 ), 1, 1 );'||chr(10)||
 '  p_encoding        := p_process.attribute_06;'||chr(10)||
 '  p_round := substr( ltrim( p_process.attribute_07 ), 1, 1 );'||chr(10)||
 '--'||chr(10)||
 '  t_filename := apex_util.get_session_state(  p_browse_item );'||chr(10)||
-'  log( ''looking'||
-' for uploaded file '' || t_filename );'||chr(10)||
+'  log( ''looking for uploaded file '' || t_filename );'||chr(10)||
 '--'||chr(10)||
 '  begin'||chr(10)||
 '    select aaf.id'||chr(10)||
-'         , aaf.blob_content'||chr(10)||
+'         , '||
+'aaf.blob_content'||chr(10)||
 '         , aaf.filename'||chr(10)||
 '    into t_file_id'||chr(10)||
 '       , t_document'||chr(10)||
@@ -419,11 +447,11 @@ wwv_flow_api.create_plugin (
 '  exception'||chr(10)||
 '    when no_data_found'||chr(10)||
 '    then'||chr(10)||
-'    '||
-'  raise e_no_doc;'||chr(10)||
+'      raise e_no_doc;'||chr(10)||
 '  end;'||chr(10)||
 '--'||chr(10)||
-'  if t_document is null or dbms_lob.getlength( t_document ) = 0'||chr(10)||
+'  if t_document is null or dbms_lob.getlength( t_d'||
+'ocument ) = 0'||chr(10)||
 '  then'||chr(10)||
 '    log( ''file is empty'' );'||chr(10)||
 '    return null;'||chr(10)||
@@ -435,11 +463,11 @@ wwv_flow_api.create_plugin (
 '  then'||chr(10)||
 '    apex_collection.delete_collection( p_collection_name );'||chr(10)||
 '  end if;'||chr(10)||
-'  for i in 1 .. 10'||
-''||chr(10)||
+'  for i in 1 .. 10'||chr(10)||
 '  loop'||chr(10)||
 '    if apex_collection.collection_exists( p_collection_name || i )'||chr(10)||
-'    then'||chr(10)||
+'   '||
+' then'||chr(10)||
 '      apex_collection.delete_collection( p_collection_name || i );'||chr(10)||
 '    end if;'||chr(10)||
 '  end loop;'||chr(10)||
@@ -448,56 +476,64 @@ wwv_flow_api.create_plugin (
 '  then'||chr(10)||
 '    log( ''parsing XLSX'' );'||chr(10)||
 '    t_what := ''XLSX-file'';'||chr(10)||
-'    execute immediate dc( t_parse_bef ) || dc( t_parse_xlsx ) || dc( t_parse_aft ) using p_coll'||
-'ection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
-'  elsif dbms_lob.substr( t_document, 8, 1 ) = hextoraw( ''D0CF11E0A1B11AE1'' )'||chr(10)||
+'    execute immediate dc( t_parse_bef ) || dc( t_parse_xlsx ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
+'  elsif dbms_lob.substr( t_docu'||
+'ment, 8, 1 ) = hextoraw( ''D0CF11E0A1B11AE1'' )'||chr(10)||
 '  then'||chr(10)||
 '    log( ''parsing XLS'' );'||chr(10)||
 '    t_what := ''XLS-file'';'||chr(10)||
 '    execute immediate dc( t_parse_bef ) || dc( t_parse_xls ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
+'  elsif dbms_lob.substr( t_document, 5, 1 ) = hextoraw( ''3C68746D6C'' )'||chr(10)||
+'  then'||chr(10)||
+'    log( ''parsing HTML'' );'||chr(10)||
+'    t_what := ''HTML-file'';'||chr(10)||
+'    execute immediate '||
+'dc( t_parse_bef ) || dc( t_parse_html ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
 '  elsif (  dbms_lob.substr( t_document, 1, 1 ) = hextoraw( ''3C'' )'||chr(10)||
-'        or'||
-' dbms_lob.substr( t_document, 2, 1 ) = hextoraw( ''003C'' )'||chr(10)||
+'        or dbms_lob.substr( t_document, 2, 1 ) = hextoraw( ''003C'' )'||chr(10)||
 '        or dbms_lob.substr( t_document, 4, 1 ) = hextoraw( ''0000003C'' )'||chr(10)||
 '        )'||chr(10)||
 '  then'||chr(10)||
 '    log( ''parsing XML'' );'||chr(10)||
 '    t_what := ''XML-file'';'||chr(10)||
-'    execute immediate dc( t_parse_bef ) || dc( t_parse_xml ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
+'    e'||
+'xecute immediate dc( t_parse_bef ) || dc( t_parse_xml ) || dc( t_parse_aft ) using p_collection_name, t_document, p_sheet_nrs, p_round;'||chr(10)||
 '  else'||chr(10)||
 '    log( ''parsing CSV'' );'||chr(10)||
 '    t_what := ''CSV-file'';'||chr(10)||
-' '||
-'   execute immediate dc( t_parse_csv ) using p_collection_name, t_document, p_separator, p_enclosed_by, p_encoding;'||chr(10)||
+'    execute immediate dc( t_parse_csv ) using p_collection_name, t_document, p_separator, p_enclosed_by, p_encoding;'||chr(10)||
 '  end if;'||chr(10)||
 '--'||chr(10)||
-'    t_rv.success_message := ''Loaded a '' || t_what || '' in '' || to_char( trunc( ( sysdate - t_time ) * 24 * 60 * 60 ) ) || '' seconds'';'||chr(10)||
+'    t_rv.success_message := ''Loaded a '' || t_what || '' in '' || to_char( tru'||
+'nc( ( sysdate - t_time ) * 24 * 60 * 60 ) ) || '' seconds'';'||chr(10)||
 '    return t_rv;'||chr(10)||
 'exception'||chr(10)||
 '  when e_no_doc'||chr(10)||
 '  then'||chr(10)||
 '    t_rv.success_message := ''No uploaded document found'';'||chr(10)||
 '    return t_rv;'||chr(10)||
-'  when other'||
-'s'||chr(10)||
+'  when others'||chr(10)||
 '  then'||chr(10)||
 '    log( dbms_utility.format_error_stack );'||chr(10)||
 '    log( dbms_utility.format_error_backtrace );'||chr(10)||
 '    t_rv.success_message := ''Oops, something went wrong in '' || p_plugin.name ||'||chr(10)||
-'         ''<br/>'' || dbms_utility.format_error_stack || ''<br/><br/>'' ||'||chr(10)||
+'         ''<br/>'' || db'||
+'ms_utility.format_error_stack || ''<br/><br/>'' ||'||chr(10)||
 '       dbms_utility.format_error_backtrace || ''<br/><br/>'' ||'||chr(10)||
 '         ''This could be caused by<ul>'' ||'||chr(10)||
-'           ''<li>'' || ''my (lack of) programm'||
-'ing skills'' || ''</li>'' ||'||chr(10)||
+'           ''<li>'' || ''my (lack of) programming skills'' || ''</li>'' ||'||chr(10)||
 '           ''<li>'' || ''something else, people do a lot more with Apex than I ever could imagine''||'||chr(10)||
 '           ''</li></ul><br/>'' ||'||chr(10)||
-'           ''try running this plugin in debug mode, and send the debug messages to me, scheffer@amis.nl'';'||chr(10)||
+'           ''try running this plugin in debug mod'||
+'e, and send the debug messages to me, scheffer@amis.nl'';'||chr(10)||
 '    return t_rv;'||chr(10)||
 'end;'||chr(10)||
 ''
  ,p_execution_function => 'parse_excel'
- ,p_version_identifier => '0.816'
- ,p_plugin_comment => '0.816'||chr(10)||
+ ,p_version_identifier => '0.818'
+ ,p_plugin_comment => '0.818'||chr(10)||
+'  XLS: fixed bug for unicode strings starting at CONTINUE record'||chr(10)||
+'0.816'||chr(10)||
 '  XLSX: treat numbers with "text" format as string'||chr(10)||
 '0.814'||chr(10)||
 '  XLS: performance'||chr(10)||
