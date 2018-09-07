@@ -54,7 +54,7 @@ prompt  Set Application ID...
 begin
  
    -- SET APPLICATION ID
-   wwv_flow.g_flow_id := nvl(wwv_flow_application_install.get_application_id,101);
+   wwv_flow.g_flow_id := nvl(wwv_flow_application_install.get_application_id,107);
    wwv_flow_api.g_id_offset := nvl(wwv_flow_application_install.get_offset,0);
 null;
  
@@ -68,7 +68,7 @@ prompt  ...plugins
 begin
  
 wwv_flow_api.create_plugin (
-  p_id => 17506852017709244 + wwv_flow_api.g_id_offset
+  p_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
  ,p_plugin_type => 'PROCESS TYPE'
  ,p_name => 'NL.AMIS.SCHEFFER.PROCESS.EXCEL2COLLECTION'
@@ -406,16 +406,16 @@ wwv_flow_api.create_plugin (
 '    and   aap.name (+) = b_name;'||chr(10)||
 '  r_api c_api%rowtype;'||chr(10)||
 '--'||chr(10)||
-'  procedure log( p_msg varchar2 )'||chr(10)||
+'  procedure log( p_msg varchar2, p_level number := 4 )'||chr(10)||
 '  is'||chr(10)||
 '  begin'||chr(10)||
 '--    apex_debug_message.error( p_msg );'||chr(10)||
-'    apex_debug_message.log_message( p_msg, p_level => 4 );'||chr(10)||
+'    apex_debug_message.log_message( p_msg, p_level => p_level );'||chr(10)||
 '  end;'||chr(10)||
-'  function dc( p varchar2 ) return varchar2'||chr(10)||
+'  function dc( p varchar2 )'||
+' return varchar2'||chr(10)||
 '  is'||chr(10)||
-'  beg'||
-'in'||chr(10)||
+'  begin'||chr(10)||
 '    return utl_raw.cast_to_varchar2( utl_compress.lz_uncompress( utl_encode.base64_decode( utl_raw.cast_to_raw( p ) ) ) );'||chr(10)||
 '  end;'||chr(10)||
 '--'||chr(10)||
@@ -425,9 +425,9 @@ wwv_flow_api.create_plugin (
 '  p_sheet_nrs       := p_process.attribute_03;'||chr(10)||
 '  if upper( p_process.attribute_04 ) in ( ''HT'', ''^I'', ''\T'' )'||chr(10)||
 '  then'||chr(10)||
-'    p_separator := chr(9);'||chr(10)||
-'  elsif upper( p_proce'||
-'ss.attribute_04 ) in ( ''VT'', ''^K'', ''\V'' )'||chr(10)||
+'    p_separator := chr'||
+'(9);'||chr(10)||
+'  elsif upper( p_process.attribute_04 ) in ( ''VT'', ''^K'', ''\V'' )'||chr(10)||
 '  then'||chr(10)||
 '    p_separator := chr(11);'||chr(10)||
 '  else'||chr(10)||
@@ -436,8 +436,8 @@ wwv_flow_api.create_plugin (
 '  p_enclosed_by     := substr( ltrim( p_process.attribute_05 ), 1, 1 );'||chr(10)||
 '  p_encoding        := p_process.attribute_06;'||chr(10)||
 '  p_round := substr( ltrim( p_process.attribute_07 ), 1, 1 );'||chr(10)||
-'  p_50 := substr( ltrim( p_process.attribute_08 ), 1, 1 )'||
-';'||chr(10)||
+'  p_50 := substr( ltrim( p_pro'||
+'cess.attribute_08 ), 1, 1 );'||chr(10)||
 '--'||chr(10)||
 '  open c_api( nv(''APP_ID''), nv(''APP_PAGE_ID''), upper( p_browse_item ), p_plugin.name );'||chr(10)||
 '  fetch c_api into r_api;'||chr(10)||
@@ -447,8 +447,8 @@ wwv_flow_api.create_plugin (
 '  end if;'||chr(10)||
 '  close c_api;'||chr(10)||
 '  log( ''apex '' || r_api.apex_version || '', '' || r_api.plugin_version || '', '' || nls_charset_name( nls_charset_id( ''C'' ) ) );'||chr(10)||
-'  t_filename := apex_util.get_session_s'||
-'tate(  p_browse_item );'||chr(10)||
+'  t_filename'||
+' := apex_util.get_session_state(  p_browse_item );'||chr(10)||
 '  log( ''looking for uploaded file '' || t_filename || '' in '' || r_api.attribute_01 );'||chr(10)||
 '--'||chr(10)||
 '  begin'||chr(10)||
@@ -461,9 +461,9 @@ wwv_flow_api.create_plugin (
 '      from apex_application_files aaf'||chr(10)||
 '      where aaf.name = t_filename;'||chr(10)||
 '--'||chr(10)||
-'      delete from apex_application_files aaf'||chr(10)||
-'      where '||
-'aaf.id = t_file_id;'||chr(10)||
+'      delete from apex_applica'||
+'tion_files aaf'||chr(10)||
+'      where aaf.id = t_file_id;'||chr(10)||
 '--'||chr(10)||
 '      log( ''retrieved!''  );'||chr(10)||
 '    elsif r_api.attribute_01 = ''APEX_APPLICATION_TEMP_FILES'''||chr(10)||
@@ -475,10 +475,10 @@ wwv_flow_api.create_plugin (
 '--'||chr(10)||
 '      log( ''retrieved!''  );'||chr(10)||
 '    end if;'||chr(10)||
-'  exception'||chr(10)||
+'  exception'||
+''||chr(10)||
 '    when no_data_found'||chr(10)||
-'   '||
-' then'||chr(10)||
+'    then'||chr(10)||
 '      raise e_no_doc;'||chr(10)||
 '  end;'||chr(10)||
 '--'||chr(10)||
@@ -492,10 +492,10 @@ wwv_flow_api.create_plugin (
 '--'||chr(10)||
 '  if apex_collection.collection_exists( p_collection_name )'||chr(10)||
 '  then'||chr(10)||
-'    apex_collection.delete_collection( p_collection_name );'||chr(10)||
+'    apex_collection.delete_collection( p_collection'||
+'_name );'||chr(10)||
 '  end if;'||chr(10)||
-'  for i '||
-'in 1 .. 10'||chr(10)||
+'  for i in 1 .. 10'||chr(10)||
 '  loop'||chr(10)||
 '    if apex_collection.collection_exists( p_collection_name || i )'||chr(10)||
 '    then'||chr(10)||
@@ -508,9 +508,9 @@ wwv_flow_api.create_plugin (
 '  begin'||chr(10)||
 '    execute immediate q''~'||chr(10)||
 'declare'||chr(10)||
-'  l_sheets excel2collection.tp_sheets;'||chr(10)||
+'  l_sheets excel2collection.tp_sheets;'||
+''||chr(10)||
 '  l_cnt pls_integer := 1;'||chr(10)||
-''||
 '  l_names apex_application_global.vc_arr2;'||chr(10)||
 '  l_values apex_application_global.vc_arr2;'||chr(10)||
 'begin'||chr(10)||
@@ -526,8 +526,8 @@ wwv_flow_api.create_plugin (
 '  l_values( 6 ) := :p6;'||chr(10)||
 '  l_values( 7 ) := :p7;'||chr(10)||
 '  l_values( 8 ) := :p8;'||chr(10)||
-'  l_sheets := excel2collection.get_she'||
-'ets;'||chr(10)||
+'  l_sheets '||
+':= excel2collection.get_sheets;'||chr(10)||
 '  for i in 1 .. l_sheets.count'||chr(10)||
 '  loop'||chr(10)||
 '    if ( :s is null'||chr(10)||
@@ -538,8 +538,8 @@ wwv_flow_api.create_plugin (
 '      l_values( 1 ) := l_sheets( i ).id;'||chr(10)||
 '      apex_collection.create_collection_from_queryb2'||chr(10)||
 '        ( :c || case when l_cnt > 1 then l_cnt end'||chr(10)||
-'        , ''select * from table( '||
-'excel2collection.get_content(:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8 ) )'''||chr(10)||
+'     '||
+'   , ''select * from table( excel2collection.get_content(:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8 ) )'''||chr(10)||
 '        , l_names'||chr(10)||
 '        , l_values'||chr(10)||
 '        );'||chr(10)||
@@ -547,9 +547,9 @@ wwv_flow_api.create_plugin (
 '                                , p_c001 => l_sheets( i ).name'||chr(10)||
 '                                , p_c002 => :c || case when l_cnt > 1 then l_cnt end'||chr(10)||
 '                                , p_n001 => l_cnt'||chr(10)||
-'                                );'||chr(10)||
-'     '||
-' l_cnt := l_cnt + 1;'||chr(10)||
+'             '||
+'                   );'||chr(10)||
+'      l_cnt := l_cnt + 1;'||chr(10)||
 '    end if;'||chr(10)||
 '    :w := l_sheets( i ).file_type;'||chr(10)||
 '  end loop;'||chr(10)||
@@ -564,24 +564,24 @@ wwv_flow_api.create_plugin (
 '           , p_encoding'||chr(10)||
 '           , p_separator'||chr(10)||
 '           , p_enclosed_by'||chr(10)||
-'           , p_round'||chr(10)||
-'           ,'||
-' p_sheet_nrs'||chr(10)||
+'      '||
+'     , p_round'||chr(10)||
+'           , p_sheet_nrs'||chr(10)||
 '           , p_collection_name'||chr(10)||
 '           , out t_what'||chr(10)||
 '           , out t_pck_log;'||chr(10)||
 '  exception'||chr(10)||
 '    when others then'||chr(10)||
-'      log( t_pck_log );'||chr(10)||
-'      log( dbms_utility.format_error_backtrace );'||chr(10)||
-'      log( dbms_utility.format_error_stack );'||chr(10)||
+'      log( t_pck_log, 1 );'||chr(10)||
+'      log( dbms_utility.format_error_backtrace, 1 );'||chr(10)||
+'      log( dbms_utility.format_error_stack, 1 );'||chr(10)||
 '      t_package_found := false;'||chr(10)||
 '  end;'||chr(10)||
 '--'||chr(10)||
 '  if t_package_found'||chr(10)||
 '  then'||chr(10)||
-'    log( ''package found, processed '' || t_what || '' in '' || trunc( ( sysdate - t_'||
-'time ) * 24 * 60 * 60 ) || '' seconds'' );'||chr(10)||
+'    log( ''package '' || t_pck_log || '' found, '||
+'processed '' || t_what || '' in '' || trunc( ( sysdate - t_time ) * 24 * 60 * 60 ) || '' seconds'' );'||chr(10)||
 '    t_rv.success_message := ''Loaded a '' || t_what || '' in '' || to_char( trunc( ( sysdate - t_time ) * 24 * 60 * 60 ) ) || '' seconds'';'||chr(10)||
 '    return t_rv;'||chr(10)||
 '  end if;'||chr(10)||
@@ -590,10 +590,10 @@ wwv_flow_api.create_plugin (
 '  if dbms_lob.substr( t_document, 4, 1 ) = hextoraw( ''504B0304'' )'||chr(10)||
 '  then'||chr(10)||
 '    log( ''parsing XLSX'' );'||chr(10)||
-'    t_what := ''XLSX-file'';'||chr(10)||
+'    t_what :'||
+'= ''XLSX-file'';'||chr(10)||
 '    t_parse := dc( t_parse_xlsx );'||chr(10)||
-'  elsi'||
-'f dbms_lob.substr( t_document, 8, 1 ) = hextoraw( ''D0CF11E0A1B11AE1'' )'||chr(10)||
+'  elsif dbms_lob.substr( t_document, 8, 1 ) = hextoraw( ''D0CF11E0A1B11AE1'' )'||chr(10)||
 '  then'||chr(10)||
 '    log( ''parsing XLS'' );'||chr(10)||
 '    t_what := ''XLS-file'';'||chr(10)||
@@ -603,9 +603,9 @@ wwv_flow_api.create_plugin (
 '    log( ''parsing HTML'' );'||chr(10)||
 '    t_what := ''HTML-file'';'||chr(10)||
 '    t_parse := dc( t_parse_html );'||chr(10)||
-'  elsif (  dbms_lob.substr( t_document, 1, 1 ) = hextoraw( ''3C'' )'||chr(10)||
-'   '||
-'     or dbms_lob.substr( t_document, 2, 1 ) = hextoraw( ''003C'' )'||chr(10)||
+'  elsif (  db'||
+'ms_lob.substr( t_document, 1, 1 ) = hextoraw( ''3C'' )'||chr(10)||
+'        or dbms_lob.substr( t_document, 2, 1 ) = hextoraw( ''003C'' )'||chr(10)||
 '        or dbms_lob.substr( t_document, 4, 1 ) = hextoraw( ''0000003C'' )'||chr(10)||
 '        )'||chr(10)||
 '  then'||chr(10)||
@@ -615,39 +615,41 @@ wwv_flow_api.create_plugin (
 '  else'||chr(10)||
 '    log( ''parsing CSV'' );'||chr(10)||
 '    t_what := ''CSV-file'';'||chr(10)||
-'    t_x := dbmsoutput_linesarray(p_separator, p_enclosed_by, p_encoding);'||chr(10)||
-'    t_parse := dc( t_parse_'||
-'csv );'||chr(10)||
+'    t_x := dbmsoutput_linesarray(p_separator,'||
+' p_enclosed_by, p_encoding);'||chr(10)||
+'    t_parse := dc( t_parse_csv );'||chr(10)||
 '  end if;'||chr(10)||
 '  execute immediate dc( t_parse_bef ) || t_parse || dc( t_parse_aft ) using p_collection_name,t_document,p_sheet_nrs,t_x,p_round,p_50;'||chr(10)||
 '--'||chr(10)||
-'    t_rv.success_message := ''Loaded a '' || t_what || '' in '' || to_char( trunc( ( sysdate - t_time ) * 24 * 60 * 60 ) ) || '' seconds'';'||chr(10)||
-'    return t_rv;'||chr(10)||
+'  t_rv.success_message := ''Loaded a '' || t_what || '' in '' || to_char( trunc( ( sysdate - t_time ) * 24 * 60 * 60 ) ) || '' seconds'';'||chr(10)||
+'  return t_rv;'||chr(10)||
 'exception'||chr(10)||
 '  when e_no_doc'||chr(10)||
 '  then'||chr(10)||
-'    t_rv.success_message := ''No uploaded document found'';'||chr(10)||
-'   '||
-' return t_rv;'||chr(10)||
+'    t_rv.'||
+'success_message := ''No uploaded document found'';'||chr(10)||
+'    return t_rv;'||chr(10)||
 '  when others'||chr(10)||
 '  then'||chr(10)||
-'    log( dbms_utility.format_error_stack );'||chr(10)||
-'    log( dbms_utility.format_error_backtrace );'||chr(10)||
+'    log( dbms_utility.format_error_stack, 1 );'||chr(10)||
+'    log( dbms_utility.format_error_backtrace, 1 );'||chr(10)||
 '    t_rv.success_message := ''Oops, something went wrong in '' || p_plugin.name ||'||chr(10)||
 '         ''<br/>'' || dbms_utility.format_error_stack || ''<br/><br/>'' ||'||chr(10)||
 '       dbms_utility.format_error_backtrace || ''<br/><br/>'' ||'||chr(10)||
-'         ''This could be caused by<ul>'' ||'||chr(10)||
-'           ''<li>'''||
-' || ''my (lack of) programming skills'' || ''</li>'' ||'||chr(10)||
+' '||
+'        ''This could be caused by<ul>'' ||'||chr(10)||
+'           ''<li>'' || ''my (lack of) programming skills'' || ''</li>'' ||'||chr(10)||
 '           ''<li>'' || ''something else, people do a lot more with Apex than I ever could imagine''||'||chr(10)||
 '           ''</li></ul><br/>'' ||'||chr(10)||
-'           ''try running this plugin in debug mode, and send the debug messages to me, scheffer@amis.nl'';'||chr(10)||
+'           ''try running this plugin in debug mode, and send the debug messages to me, excel2collection@gmail.com'';'||chr(10)||
 '    return t_rv;'||chr(10)||
 'end;'||chr(10)||
 ''
  ,p_execution_function => 'parse_excel'
- ,p_version_identifier => '0.904'
- ,p_plugin_comment => '0.904'||chr(10)||
+ ,p_version_identifier => '0.906'
+ ,p_plugin_comment => '0.906'||chr(10)||
+'  changed email-address'||chr(10)||
+'0.904'||chr(10)||
 '  add version information to log'||chr(10)||
 '0.902'||chr(10)||
 '  use package excel2collection when available'||chr(10)||
@@ -691,9 +693,9 @@ wwv_flow_api.create_plugin (
 ''
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 17551329405456272 + wwv_flow_api.g_id_offset
+  p_id => 22624556445297404 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 1
  ,p_display_sequence => 10
@@ -704,9 +706,9 @@ wwv_flow_api.create_plugin_attribute (
  ,p_help_text => 'The name of the File Browse Item which is used to select the uploaded Excel file.'
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 17552027027484001 + wwv_flow_api.g_id_offset
+  p_id => 22625254067325133 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 2
  ,p_display_sequence => 20
@@ -721,9 +723,9 @@ wwv_flow_api.create_plugin_attribute (
 '<br/>&lt;Collection name&gt;4'
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 17553341619516560 + wwv_flow_api.g_id_offset
+  p_id => 22626568659357692 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 3
  ,p_display_sequence => 30
@@ -740,9 +742,9 @@ wwv_flow_api.create_plugin_attribute (
 '&nbsp;&nbsp;Sheet1:Sheet2 will load the sheets with the names "Sheet1" and  "Sheet2"'
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 17554045821546190 + wwv_flow_api.g_id_offset
+  p_id => 22627272861387322 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 4
  ,p_display_sequence => 40
@@ -755,9 +757,9 @@ wwv_flow_api.create_plugin_attribute (
 'Use \t, ^I or HT for a (horizontal) tab character.'
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 17554743659564444 + wwv_flow_api.g_id_offset
+  p_id => 22627970699405576 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 5
  ,p_display_sequence => 50
@@ -771,9 +773,9 @@ wwv_flow_api.create_plugin_attribute (
 'The same character is used as the escape character.'
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 17555437950600672 + wwv_flow_api.g_id_offset
+  p_id => 22628664990441804 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 6
  ,p_display_sequence => 60
@@ -786,9 +788,9 @@ wwv_flow_api.create_plugin_attribute (
 '<br/>Use the Oracle name for the character set, for instance WE8MSWIN1252 and not Windows-1252'
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 15791643311915500 + wwv_flow_api.g_id_offset
+  p_id => 20864870351756632 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 7
  ,p_display_sequence => 70
@@ -800,9 +802,9 @@ wwv_flow_api.create_plugin_attribute (
  ,p_help_text => 'Excel has a numerical precision of 15 digits. When this option is used numbers are rounded to 15 digits.'
   );
 wwv_flow_api.create_plugin_attribute (
-  p_id => 9938542229838312 + wwv_flow_api.g_id_offset
+  p_id => 15011769269679444 + wwv_flow_api.g_id_offset
  ,p_flow_id => wwv_flow.g_flow_id
- ,p_plugin_id => 17506852017709244 + wwv_flow_api.g_id_offset
+ ,p_plugin_id => 22580079057550376 + wwv_flow_api.g_id_offset
  ,p_attribute_scope => 'COMPONENT'
  ,p_attribute_sequence => 8
  ,p_display_sequence => 80
