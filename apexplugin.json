@@ -1,0 +1,33 @@
+{
+  "name" : "excel2collections",
+  "version" : "0.906",
+  "description" : "Oracle APEX process type plugin to load an Excel file into an APEX collection.",
+  "keywords" : ["excel", "APEX-collection", "xlsx", "CSV", "xls"],
+  "homepage" : "https://github.com/antonscheffer/excel2collections",
+  "bugs" : {
+    "url" : "https://github.com/antonscheffer/excel2collections/issues",
+    "email" : "excel2collection@gmail.com"
+  },
+  "license" : "MIT",
+  "author" : {
+    "name" : "Anton Scheffer",
+    "email" : "excel2collection@gmail.com",
+    "donationUrl" : "https://www.paypal.me/apexplugins/3"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/antonscheffer/excel2collections.git"
+  },
+  "oracle" : {
+    "versions" : ["10.2.04", "11.2.0.1", "12.1.0.1", "12.2.0.1" ],
+    "apex" : {
+      "versions" : ["4.02", "4.2.6", "5.0.0", , "5.1.0", "18.1.0"],
+      "plugin" : {
+        "internalName" : "NL.AMIS.SCHEFFER.PROCESS.EXCEL2COLLECTION",
+        "type" : "process",
+        "demo" : "https://apex.oracle.com/pls/apex/f?p=33308:1",
+        "previewImage" : "https://raw.githubusercontent.com/antonscheffer/excel2collections/master/excel2collections_preview.png"
+      }
+    }
+  }
+}
