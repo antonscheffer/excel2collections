@@ -1,5 +1,5 @@
 # excel2collections
-Oracle APEX process type plugin to load an Excel file into an APEX collection.
+Oracle APEX process type plugin to load an Excel file into an APEX collection.<br/>
 Supported formats are XLSX, XSL, XML 2003 and CSV.
 ## Usage
 - Just import the plugin into a application
