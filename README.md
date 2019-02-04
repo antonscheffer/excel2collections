@@ -10,5 +10,3 @@ Supported formats are XLSX, XSL, XML 2003 and CSV.
 - Or take a look at the included [demo application](demo/f107_demo_application.sql)
 
 If you like this plugin: [donations](https://www.paypal.me/apexplugins/3) are most appreciated :yum:.
-
-People which make a [large donation](https://www.paypal.me/apexplugins/10) (and leave their email-adress) are rewarded: I will send them a script which creates a database package and some types. The excel2collection plugin (as of version 0.904) will detect the package and use it. And then it will load a lot more records (at apex.oracle.com it will load more than 10000 records) before APEX throws a ORA-00040: active time limit exceeded - call aborted 
