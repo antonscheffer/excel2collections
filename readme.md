@@ -9,5 +9,6 @@ Updated XLSX parsing. new version requires APEX 22.2 or higher
 - As soon as you submit your page the Excel is loaded to a APEX collection
 ![example](excel2collections_settings.png)
 - Or take a look at the included [demo application](demo/f100.sql)
+- See it in action at [apex.oracle.com](https://apex.oracle.com/pls/apex/f?p=33308)
 
 If you like this plugin: [donations](https://www.paypal.me/apexplugins/3) are most appreciated :yum:.
