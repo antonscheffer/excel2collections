@@ -437,7 +437,7 @@ declare
                    )
         loop
           if    r_n.id between 14 and 17
-             or instr( r_n.format, 'd' ) > 0
+             or ( instr( r_n.format, 'd' ) > 0 and instr( r_n.format, 'red' ) = 0 )
              or instr( r_n.format, 'y' ) > 0
           then
             l_date_styles( r_n.seq ) := null;
@@ -460,7 +460,7 @@ declare
       l_log := 'No xlsx file' || chr(10);
       return;
     end if;
-    l_log := 'parse_xlsx.prc version 1.000';
+    l_log := 'parse_xlsx.prc version 1.002';
     --
     for r_x in ( select xt1.d1904
                       , xt2.seq
